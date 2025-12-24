@@ -1,1 +1,1 @@
-This notebook compares the performance of three neural network architectures—Fully Connected, LSTM, and Bidirectional LSTM—on the BBBP molecular dataset. The models are evaluated across multiple data bins.
+this
