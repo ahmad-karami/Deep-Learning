@@ -1,7 +1,8 @@
 # 📘 Deep Learning Models and Representation Learning
 
 This repository is a collection of **deep learning models and experiments** covering core neural network architectures, representation learning techniques, and sequence modeling methods. The codebase is organized by model family, with each directory focusing on a specific concept or learning paradigm. The implementations are designed for **learning, experimentation, and research-oriented exploration**.
-Most of these implementations originate from coursework and projects for the Deep Learning course at Sharif University of Technology.
+
+Most of these implementations originate from coursework and projects for the **Deep Learning** course at **Sharif University of Technology**.
 
 ---
 
