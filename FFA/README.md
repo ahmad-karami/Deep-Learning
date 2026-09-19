@@ -1,2 +1,9 @@
-# Feature-Field Alignment (FFA) Experiments
-This repository contains two FFA-based experiments on the MNIST dataset using PyTorch: a supervised setup and an unsupervised setup. Both notebooks implement custom architectures and training procedures that encourage separation between positive and negative examples via energy-style objectives on feature activations.
+# Forward-Forward Algorithm on MNIST
+
+This folder contains Forward-Forward experiments on MNIST in PyTorch, each in its own subfolder.
+
+## [Supervised](Supervised/)
+A fully connected network trained layer by layer with the Forward-Forward algorithm, with the label written into each input image.
+
+## [UnSupervised](UnSupervised/)
+The folder for an unsupervised variant; it contains no notebook.

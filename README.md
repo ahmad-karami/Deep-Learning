@@ -6,58 +6,24 @@ Most of these implementations originate from coursework and projects for the **D
 
 ---
 
-## 📂 Repository Structure
+## [CNN](CNN/)
+- ResNet-50 classifiers for CIFAR-10 airplanes and automobiles, trained with cross-entropy, triplet loss, or both.
+- A CNN with modulated deformable convolutions compared with a standard CNN on rescaled MNIST digits.
+- A two-stream residual network that recognizes rotation, displacement, and scaling applied to ADE20K images.
 
-### **CNN (Convolutional Neural Networks)**
-Experiments and models based on convolutional architectures for feature learning and visual tasks:
-- **CNN_Triplet_Loss_Classification** – Metric learning using triplet loss for robust classification.
-- **Deformable_Convolution** – Adaptive convolutional layers for handling geometric variations.
-- **Displacement_Detection** – CNN-based detection of spatial displacement patterns.
+## [FFA](FFA/)
+A fully connected network trained on MNIST with the Forward-Forward algorithm; the folder for the unsupervised variant has no notebook.
 
----
+## [Fully_conected](Fully_conected/)
+Fully connected networks for CIFAR-10 built from layers with explicit backward passes, with comparisons of SGD, momentum, RMSProp, Adam, and dropout.
 
-### **FFA (Feature-Field Alignment)**
-Methods for aligning feature representations across domains or distributions:
-- **Supervised** – Feature alignment using labeled data.
-- **UnSupervised** – Distribution alignment without explicit supervision.
+## [LSTM](LSTM/)
+- Fully connected, LSTM, and bidirectional LSTM classifiers for blood-brain barrier penetration from SMILES strings (BBBP).
+- Fine-tuning of a Persian GPT-2 model to generate the second hemistich of Ferdowsi couplets.
 
----
+## [PCA](PCA/)
+PCA on MNIST, with reconstructions and logistic-regression accuracy as a function of the number of components.
 
-### **Fully_connected**
-Implementations of classical **fully connected (dense) neural networks**, serving as baselines and foundations for deeper architectures.
-
----
-
-### **LSTM (Long Short-Term Memory Networks)**
-Sequence modeling and temporal learning tasks:
-- **FC_LSTM_BiLSTM** – Comparison of fully connected, LSTM, and bidirectional LSTM architectures.
-- **Poetry_Generation** – Text generation using recurrent neural networks.
-
----
-
-### **PCA (Principal Component Analysis)**
-Dimensionality reduction and feature extraction using classical linear techniques.
-
----
-
-### **VAE (Variational Autoencoders)**
-Probabilistic generative models for representation learning:
-- **VAE_CVAE.ipynb** – Variational Autoencoder and Conditional VAE implementations.
-- **VQ_VAE.ipynb** – Vector Quantized VAE for discrete latent representations.
-
----
-
-## 🎯 Purpose
-This repository serves as:
-- A **learning resource** for deep learning fundamentals  
-- A **research playground** for experimenting with architectures and loss functions  
-- A **modular reference** for CNNs, RNNs, and generative models  
-
-Each folder is self-contained and focuses on a specific modeling idea, making the repository easy to extend and maintain.
-
----
-
-## 🛠️ Notes
-- Most experiments are implemented in **Python** using common deep learning frameworks.
-- Notebooks (`.ipynb`) include explanations and visualizations where appropriate.
-- The repository is actively evolving as new models and ideas are explored.
+## [VAE](VAE/)
+- A VAE and a conditional VAE with fully connected layers on MNIST, with t-SNE plots of their latent spaces.
+- A VQ-VAE on MNIST and on colored MNIST with varying codebook sizes and dimensions.

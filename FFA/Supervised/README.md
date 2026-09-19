@@ -1,20 +1,6 @@
-# Supervised Feature-Field Alignment
-implementation of FFA for labelled MNIST classification.​
+# Forward-Forward Training on MNIST
 
-- Label-aware data generation
+This notebook trains a fully connected network on MNIST with the Forward-Forward algorithm in PyTorch, in which each layer is trained with a local objective instead of backpropagation through the whole network. The label is written into the first 10 pixels of each flattened image as a one-hot code, which gives positive samples with the correct label and negative samples with a random wrong label. Each layer normalizes its input, applies a linear map and a ReLU, and is trained with its own Adam optimizer so that its goodness, the mean squared activation, is above a threshold of 2.0 for positive samples and below it for negative samples. A network with layer sizes 784, 500, and 500 is trained layer by layer, for 1,000 steps per layer on each batch of 5,000 training images. To classify an image, the network tries all 10 labels and picks the one with the largest goodness summed over the layers, and the notebook reports the accuracy on the training and test sets.
 
-  - Construction of positive samples by embedding the correct label as a one-hot code into the first pixels of each flattened image.​
-
-  - Construction of negative samples by generating mismatched labels and embedding them in the same way, producing label–image inconsistencies.​
-
-- FFA layer and network
-
-  - Definition of a custom Layer class that normalizes inputs, applies a linear + ReLU transform, and computes the per-sample energy g(x) as the mean squared activation.​
-
-  - A Net class stacks multiple FFA layers and provides a predict method that converts energies into class predictions.​
-
-- Training objective and results
-
-  - Layer-wise training that minimizes energy on positive samples while maximizing (up to a margin) energy on negative samples, using an energy-difference loss with threshold.​
-
-  - Reported MNIST performance with high train and test accuracy (around 94%), demonstrating that FFA can act as a competitive supervised classifier.
+## Results
+The network reaches an accuracy of 94.44% on the training set and 94.02% on the test set. The notebook does not record the loss during training, so it has no training curves.

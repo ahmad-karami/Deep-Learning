@@ -1,3 +1,6 @@
-This notebook presents the fine-tuning of a GPT-2 language model to generate Persian poetry inspired by Ferdowsi, the great classical Persian poet.
-Using PyTorch and Hugging Face Transformers, the model is trained on a poetry corpus to learn stylistic and linguistic patterns characteristic of Ferdowsi’s works.
-The notebook covers data preprocessing, tokenization, train/test splitting, model fine-tuning, and poem generation on unseen prompts.
+# Persian Poetry Generation in the Style of Ferdowsi with GPT-2
+
+This notebook fine-tunes `HooshvareLab/gpt2-fa`, a Persian GPT-2 model from Hugging Face Transformers, to write the second hemistich of a couplet given the first. The training data is `ferdousi.txt`, a corpus of Ferdowsi's poetry with one hemistich per line, which yields 49,608 pairs of first and second hemistichs, split 90/10 into training and test sets. At each position of the tokenized first hemistich, the model is trained with cross-entropy to predict the token at the same position of the second hemistich, using AdamW and early stopping on a moving average of the validation loss. After fine-tuning, the notebook generates continuations of 20 training and 32 test hemistichs with beam search.
+
+## Results
+Early stopping ends training in the third epoch, after the average training loss falls from 3.74 in the first epoch to 3.50 in the second. The printed validation losses of 0.02 are the loss of a single test batch divided by the number of test batches, so they are about 156 times too small. The generated continuations mostly repeat short words that rhyme with the last word of the input, such as "گاه", "راه", and "سپاه" after a hemistich that ends in "شاه", rather than forming a second hemistich.
